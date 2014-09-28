@@ -1,0 +1,1040 @@
+*
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+  &:before, &:after
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+
+html
+  height: 100%
+  -webkit-font-smoothing: antialiased
+
+body
+  height: 100%
+  -webkit-font-smoothing: antialiased
+  margin: 0
+  padding: 0
+
+.preload *
+  -webkit-transition: none!important
+  -moz-transition: none!important
+  -ms-transition: none!important
+  -o-transition: none!important
+
+#wrapper
+  position: relative
+  min-height: 100%
+  height: auto!important
+  background: #eaf9f6
+
+.wrapper-inside
+  width: 1000px
+  margin: 0 auto
+  .share-networks
+    display: none
+
+body.modal-open
+  margin-right: 0
+
+.nav
+  ul
+    margin: 0
+    padding: 0
+    float: left
+    list-style: none
+    li
+      float: left
+      margin-right: 25px
+      &:nth-child(5)
+        margin-left: 20px
+      a
+        color: white
+        text-decoration: none
+        font-family: "myriad-pro",Arial,sans-serif
+        display: block
+        &:hover
+          color: #77f0f0
+      .share
+        background: url("/assets/front_page/share-icon.png") no-repeat right 0
+        padding-right: 20px
+        &:hover
+          background-position: right -20px
+      .apply
+        background: #f27649
+        border-radius: 8px
+        -moz-border-radius: 8px
+        -webkit-border-radius: 8px
+        padding: 8px 12px
+        margin-top: -8px
+        display: none
+        &:hover
+          color: white
+  .popover
+    max-width: 350px
+  .popover-content ul
+    margin-bottom: 10px
+    li
+      float: left
+      margin-top: 2px
+      margin-right: 10px
+      &:last-child
+        margin-right: 0
+      a
+        background-image: url("/assets/front_page/share-sprite.png")
+        background-repeat: no-repeat
+        width: 62px
+        height: 62px
+        display: block
+  .tumblr a
+    background-position: 0 0
+    &:hover
+      background-position: 0 -62px
+  .twitter a
+    background-position: -85px 0
+    &:hover
+      background-position: -85px -62px
+  .facebook a
+    background-position: -169px 0
+    &:hover
+      background-position: -169px -62px
+  .google a
+    background-position: -253px 0
+    &:hover
+      background-position: -253px -62px
+  .pinterest a
+    background-position: -337px 0
+    &:hover
+      background-position: -337px -62px
+  .linkedin a
+    background-position: -422px 0
+    &:hover
+      background-position: -422px -62px
+
+.top-bg
+  min-height: 70px
+
+.fixed
+  background: url("/assets/dark-header.png") left top repeat-x
+  position: fixed
+  top: 0
+  width: 100%!important
+  padding-top: 10px
+  z-index: 100
+
+#header
+  background: url("/assets/code-bg.jpg")
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  background-size: cover
+  padding-top: 10px
+  .top
+    width: 1000px
+  .nav
+    float: right
+    margin-top: 20px
+
+.current
+  color: #77f0f0!important
+
+#logo
+  margin: 0
+  padding: 0
+  float: left
+  a
+    width: 237px
+    height: 55px
+    background-size: 237px 55px
+    background: url("/assets/logo.svg")
+    display: block
+
+.content
+  padding: 0 0 70px 0
+
+.index-page
+  .modal-dialog
+    padding-top: 15%
+  .modal-content
+    background-color: #d8e8e5
+  .modal-body
+    padding: 30px
+
+#email-form
+  .wrapper-inside
+    width: 550px
+    font-size: 24px
+    font-family: "Crete Round",serif
+    font-style: italic
+    letter-spacing: -0.9px
+    text-align: center
+    margin: 50px auto
+    overflow: hidden
+  #mailing-list-email
+    background: white
+    border: 1px solid #cccccc
+    border-top-left-radius: 3px
+    -webkit-border-top-left-radius: 3px
+    -moz-border-top-left-radius: 3px
+    border-bottom-left-radius: 3px
+    -webkit-border-bottom-left-radius: 3px
+    -moz-border-bottom-left-radius: 3px
+    border-top-right-radius: 3px
+    -webkit-border-top-right-radius: 3px
+    -moz-border-top-right-radius: 3px
+    border-bottom-right-radius: 3px
+    -webkit-border-bottom-right-radius: 3px
+    -moz-border-bottom-right-radius: 3px
+    font-size: 16px
+    color: #9c9598
+    padding: 12px 12px 12px
+    width: 300px
+    display: block
+    margin-right: 20px
+    float: left
+  .btn
+    border: 0
+    background: #f27649
+    cursor: pointer
+    height: 44px
+    text-align: center
+    color: white
+    border-top-right-radius: 3px
+    -webkit-border-top-right-radius: 3px
+    -moz-border-top-right-radius: 3px
+    border-bottom-right-radius: 3px
+    -webkit-border-bottom-right-radius: 3px
+    -moz-border-bottom-right-radius: 3px
+    font-family: "myriad-pro",sans-serif
+    font-size: 16px
+    display: block
+    padding-left: 30px
+    padding-right: 30px
+    float: left
+
+#footer
+  width: 100%
+  height: 70px
+  position: absolute
+  bottom: 0
+  .nav
+    background: #333333
+    min-height: 70px
+    ul
+      width: 595px
+      margin-top: 25px
+      li
+        color: #e0e0e0
+    #copyright
+      float: right
+      color: white
+      font-family: "myriad-pro",sans-serif
+      font-size: 14px
+      margin-top: 25px
+      color: #e0e0e0
+
+.top-small
+  font-family: "Crete Round",Georgia,Times New Roman,serif
+  font-size: 40px
+  min-height: 270px
+  color: white
+  text-align: center
+  padding: 90px 0 0 0
+
+.top-large
+  float: left
+  margin-top: 45px
+  color: white
+  div
+    font-size: 40px
+    text-align: left
+    font-family: "Crete Round",Georgia,"Times New Roman",Times,serif
+    margin-bottom: 50px
+  p
+    font-size: 20px
+    font-family: "myriad-pro",Arial,sans-serif
+    line-height: 1.5
+    margin-top: 30px
+  .highlight
+    font-style: italic
+    padding: 0px 5px
+
+h2, h3
+  margin: 0
+  padding: 0
+
+.subsection
+  margin-bottom: 50px
+  p
+    color: #333333
+    font-size: 18px
+    font-family: "myriad-pro",Arial,sans-serif
+    margin: 15px 0 25px 0
+    line-height: 1.55
+    letter-spacing: 0.1px
+    text-align: left
+    &:last-child
+      margin-bottom: 0
+
+.title
+  text-transform: uppercase
+  color: #14877e
+  display: inline-block
+  padding: 0 45px 10px
+  border-bottom: 1px solid #14877e
+  font-weight: 800
+  font-family: "myriad-pro",Arial,sans-serif
+  font-size: 30px
+  margin-bottom: 50px
+  text-align: center
+
+.subtitle
+  font-family: "Crete Round",Georgia,Times New Roman,serif
+  font-size: 30px
+  text-transform: uppercase
+  color: #14877e
+  margin-bottom: 10px
+  font-weight: normal
+
+.student-image
+  float: right
+  margin-top: 30px
+
+.success-stories-page .testimony.show div
+  background-image: none!important
+  blockquote
+    margin: 0 -40px
+    padding: 0 40px
+    border: 0
+    background: url("/assets/front_page/quote_left-5da09663e57895679241416f9c17d9f0.png") no-repeat left top, url("/assets/front_page/quote_right-64d8dcf4c9cd194c0b8293f6a1268b66.png") no-repeat right bottom
+    display: inline-block
+    font-family: "myriad-pro",Arial,sans-serif
+    font-size: 28px
+    font-style: italic
+    line-height: 1.25
+
+#success-stories, #success-stories-main
+  width: 100%
+  text-align: center
+  min-height: 750px
+  background: white
+  padding: 75px 0
+
+#success-stories .wrapper-inside, #success-stories-main .wrapper-inside
+  text-align: left
+  margin: 0 auto
+  position: relative
+
+#success-stories .wrapper-inside .testimony, #success-stories-main .wrapper-inside .testimony
+  display: none
+  opacity: 0
+
+#success-stories .wrapper-inside .testimony.show, #success-stories-main .wrapper-inside .testimony.show
+  display: block!important
+  opacity: 1
+
+#success-stories .wrapper-inside .testimony.show div, #success-stories-main .wrapper-inside .testimony.show div
+  width: 870px
+  margin: 0 auto
+  background: whitesmoke url("/assets/front_page/quotes-9acb071747d6bb4855ddbd87876be811.png") no-repeat
+  color: #333333
+  min-height: 190px
+  font-family: "myriad-pro",Arial,sans-serif
+  font-size: 24px
+  font-style: italic
+  padding: 40px 90px
+  border-radius: 5px
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+
+#success-stories .wrapper-inside .testimony.show div a, #success-stories-main .wrapper-inside .testimony.show div a
+  color: #1bbfb1
+  text-decoration: none
+  border-bottom: 1px dotted #1bbfb1
+
+#success-stories .navi, #success-stories-main .navi
+  position: absolute
+  text-align: center
+  width: 180px
+  transition: all 0.5s ease
+
+#success-stories .navi img, #success-stories-main .navi img
+  transition: all 0.5s ease
+  width: 70px
+  margin-top: 40px
+  border-radius: 50%
+  -moz-border-radius: 50%
+  -webkit-border-radius: 50%
+  opacity: 0.4
+
+#success-stories .navi img:hover, #success-stories-main .navi img:hover
+  opacity: 1
+  cursor: pointer
+
+#success-stories .navi .success-name, #success-stories-main .navi .success-name
+  font-family: "Crete Round",Georgia,Times New Roman,serif
+  font-style: italic
+  font-size: 22px
+  color: #e5533c
+  margin-top: 5px
+
+#success-stories .navi .success-title, #success-stories-main .navi .success-title, #success-stories .navi .success-location, #success-stories-main .navi .success-location
+  font-family: "myriad-pro",Arial,sans-serif
+  font-size: 16px
+
+#success-stories .navi .social-container, #success-stories-main .navi .social-container
+  width: 100%
+  margin: 0 auto
+  text-align: center
+
+#success-stories .navi .social, #success-stories-main .navi .social
+  width: 25px
+  height: 25px
+  margin-top: 10px
+  display: inline-block
+  margin-left: 10px
+  background: url("/assets/front_page/sprite-social-b0d867e04440178ed08a96f11e5cda25.png") no-repeat
+
+#success-stories .navi .social:first-child, #success-stories-main .navi .social:first-child
+  margin-left: 0
+
+#success-stories .navi .gplus, #success-stories-main .navi .gplus
+  background-position: 0 0
+
+#success-stories .navi .linkedin, #success-stories-main .navi .linkedin
+  background-position: -36px 0
+
+#success-stories .navi .twitter, #success-stories-main .navi .twitter
+  background-position: -71px 0
+
+#success-stories .navi div, #success-stories-main .navi div
+  display: none
+  opacity: 0
+
+#success-stories .active.navi, #success-stories-main .active.navi
+  z-index: 10
+  transition: all 0.5s ease
+
+#success-stories .active.navi img, #success-stories-main .active.navi img
+  width: 110px
+  margin-top: 20px
+  opacity: 1
+  transition: all 0.5s ease
+
+#success-stories .active.navi div, #success-stories-main .active.navi div
+  display: block!important
+  opacity: 1
+
+#success-stories .navi-0, #success-stories-main .navi-0
+  left: 30px
+
+#success-stories .navi-1, #success-stories-main .navi-1
+  left: 135px
+
+#success-stories .navi-2, #success-stories-main .navi-2
+  left: 245px
+
+#success-stories .navi-3, #success-stories-main .navi-3
+  left: 355px
+
+#success-stories .navi-4, #success-stories-main .navi-4
+  left: 465px
+
+#success-stories .navi-5, #success-stories-main .navi-5
+  left: 575px
+
+#success-stories .navi-6, #success-stories-main .navi-6
+  left: 685px
+
+#success-stories .navi-7
+  left: 790px
+
+#success-stories-main
+  .navi-7
+    left: 790px
+  .testimonies
+    float: right
+  .student-stories
+    float: left
+  .navi
+    position: static
+  .wrapper-inside .testimony.show
+    position: relative
+    div
+      width: 740px
+      font-style: normal
+      font-size: 16px
+      line-height: 1.625
+      letter-spacing: 0.1px
+
+.our-curriculum, .next
+  width: 680px
+  text-align: center
+  margin: 0 auto
+  padding: 75px 0
+
+.our-curriculum .btn a, .next .btn a
+  width: 380px
+  height: 52px
+  display: block
+  background: #f27649
+  border-radius: 3px
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  color: white
+  text-decoration: none
+  font-family: "myriad-pro",Arial,sans-serif
+  font-size: 24px
+  padding: 9px 0 0 0px
+  margin: 0 auto
+
+.arrow
+  width: 36px
+  height: 80px
+  margin: 0 auto 50px
+  background: url("/assets/front_page/arrow-sketch-d3e4e62f26d2904e15d8ba6bd0ce3dc5.png")
+
+.faq, .about
+  background: white
+  padding: 50px 0
+  line-height: 1.4
+  font-family: "myriad-pro",Arial,sans-serif
+
+.faq a, .about a
+  color: #14877e
+
+.faq em, .about em
+  background: #eaf9f6
+  display: block
+  margin-bottom: 15px
+  padding: 15px
+  border-radius: 3px
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  font-size: 18px
+
+.faq .question, .about .question
+  font-size: 20px
+  border-bottom: 1px solid #333333
+  color: #333333
+  padding-bottom: 10px
+  line-height: 1
+  margin-bottom: 10px
+
+.faq .answer, .about .answer
+  font-size: 16px
+  color: #6c6965
+  line-height: 1.5
+  letter-spacing: 0.1px
+
+.faq .answer
+  > ul, ol
+    padding-left: 20px
+
+.about .answer
+  > ul, ol
+    padding-left: 20px
+
+.left-column
+  width: 475px
+  float: left
+
+.right-column
+  width: 475px
+  float: right
+
+.instructor
+  font-family: "myriad-pro"
+  font-size: 14px
+  margin-bottom: 40px
+  h2
+    font-family: "Crete Round"
+    font-style: italic
+    color: #e5533c
+  img
+    float: left
+  .bio
+    width: 750px
+    margin: 0 0 0 20px
+    float: left
+  .social
+    list-style: none
+    margin: 5px 0 0
+    padding: 0
+    li
+      float: left
+      margin-right: 10px
+      a
+        width: 25px
+        height: 24px
+        display: block
+        background: url("/assets/front_page/sprite-social-b0d867e04440178ed08a96f11e5cda25.png") no-repeat
+  .google a
+    background-position: 0 0!important
+  .linkedin a
+    background-position: -36px 0 !important
+  .twitter a
+    background-position: -71px 0 !important
+
+.curriculum
+  padding-top: 0
+  .wrapper-inside
+    text-align: center
+  .title
+    margin-bottom: 0
+  .course-nav-wrapper
+    min-height: 127px
+    background: #148780
+    border-top: 2px solid #0d5551
+    border-bottom: 2px solid #0d5551
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      li
+        width: 33%
+        float: left
+        position: relative
+        cursor: pointer
+        &:nth-child(1)
+          z-index: 3
+        &:nth-child(2)
+          z-index: 2
+        &:nth-child(3)
+          z-index: 1
+        a
+          display: block
+          height: 123px
+          position: relative
+          padding: 15px 20px 0 20px
+          text-decoration: none
+          font-family: "myriad-pro",Arial,sans-serif
+          font-size: 20px
+          &:hover
+            background-color: #0d5551
+            .course-arrow
+              background-position: 0 -123px
+          .course-name
+            color: #8ac3c0
+            text-transform: uppercase
+          .course-duration
+            color: #46bcb8
+            font-family: "Crete Round",Georgia,Times New Roman,serif
+            font-size: 24px
+            margin-top: 8px
+          .course-arrow
+            width: 10px
+            height: 123px
+            position: absolute
+            z-index: 0
+            top: 0
+            right: -8px
+            background: url("/assets/course-bg-arrow.png") no-repeat 0 0
+          .favorite
+            width: 32px
+            height: 32px
+            background: url("/assets/front_page/course-like-50d94a76412d6a155d444fe888aa4eee.png") no-repeat
+            position: absolute
+            top: 0
+            right: 0
+      .active a
+        background-color: #0d5551
+        .course-arrow
+          background-position: 0 -123px
+        .course-name
+          color: white
+        .course-duration
+          color: #77f0f0
+  .course-premise
+    margin: 0 auto
+    text-align: center
+    .wrapper-inside
+      width: auto
+      padding: 50px 0
+      background: white
+      .alt-subtitle
+        margin-bottom: 50px
+        font-family: "myriad-pro",Arial,sans-serif
+        font-size: 22px
+      .course-mast
+        width: 685px
+        margin: 0 auto
+        height: 200px
+        position: relative
+        .bracket
+          width: 56px
+          height: 140px
+          background: url("/assets/front_page/sprite-bracket-187ba158fad0edeb17c532179a205f11.png") no-repeat
+          position: absolute
+          top: 50%
+          margin-top: -70px
+        .left
+          background-position: 0 0
+          left: 0
+        .right
+          background-position: -60px 0
+          right: 0
+  .course-outline
+    padding: 50px 0
+    color: #333333
+    .title
+      margin-bottom: 30px
+    .alt-subtitle
+      font-style: italic
+      width: 830px
+      margin: 0 auto 75px
+      text-align: left
+      font-family: "myriad-pro",Arial,sans-serif
+      font-size: 18px
+      line-height: 1.65
+      letter-spacing: 0.2px
+    p, ul
+      text-align: left
+  .detailed-syllabus
+    background: white
+    padding: 50px 0
+  .new-topics
+    list-style: none
+    margin: 0
+    padding: 0
+    li
+      font-family: "Crete Round",Georgia,Times New Roman,serif
+      font-size: 36px
+      color: #e5533c
+      margin-bottom: 5px
+  .course-topics
+    margin: 0
+    padding: 0
+    list-style: disc
+    li
+      border-bottom: 1px solid #d6d7d7
+      width: 470px
+      padding: 20px 10px 5px 0
+      float: left
+      margin-right: 40px
+      &:nth-child(2n)
+        margin-right: 0
+  .detailed-syllabus
+    .title
+      margin-bottom: 75px
+    h4
+      font-family: "myriad-pro",Arial,sans-serif
+      font-size: 22px
+      border-bottom: 1px solid #6c6965
+      color: #333333
+      text-transform: uppercase
+      padding-bottom: 5px
+      margin-bottom: 0
+      &:first-child
+        margin-top: 0
+    p
+      margin: 10px 0
+      font-family: "Crete Round",Georgia,Times New Roman,sans-serif
+      font-size: 20px
+    em
+      background: #eaf9f6
+      display: block
+      padding: 20px
+      margin: 20px 0 20px
+      font-family: "myriad-pro",Arial,sans-serif
+      font-size: 18px
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      li
+        font-family: "myriad-pro",Arial,sans-serif
+        font-size: 16px
+    .columns
+      text-align: left
+    .left
+      width: 580px
+      float: left
+    .right
+      width: 300px
+      float: right
+  #rails, #production-apps
+    display: none
+  #rails .detailed-syllabus ul, #production-apps .detailed-syllabus ul
+    margin-top: 15px
+  .testimony
+    margin-bottom: 40px
+    .text
+      position: relative
+      margin-bottom: 25px
+      background: whitesmoke
+      padding: 20px
+      border-radius: 5px
+      -moz-border-radius: 5px
+      -webkit-border-radius: 5px
+      font-family: "myriad-pro",Arial,sans-serif
+      font-style: italic
+      font-size: 20px
+      &:before
+        content: ""
+        position: absolute
+        bottom: -20px
+        left: 70px
+        border-width: 20px 20px 0
+        border-style: solid
+        border-color: whitesmoke transparent
+        display: block
+        width: 0
+      a
+        color: #1bbfb1
+        text-decoration: none
+        border-bottom: 1px dotted #1bbfb1
+  .navi
+    img
+      width: 70px
+      border-radius: 50%
+      -moz-border-radius: 50%
+      -webkit-border-radius: 50%
+      float: left
+      margin-left: 15px
+    .info
+      width: 190px
+      margin-left: 15px
+      float: left
+    .success-name
+      font-family: "Crete Round",Georgia,Times New Roman,serif
+      font-style: italic
+      font-size: 16px
+      color: #e5533c
+      margin-top: 5px
+    .success-title, .success-location
+      font-family: "myriad-pro",Arial,sans-serif
+      font-size: 14px
+    .gplus
+      background-position: 0 0
+    .linkedin
+      background-position: -36px 0
+    .twitter
+      background-position: -71px 0
+  .course-price-information
+    background: #127570
+    border-radius: 5px
+    -moz-border-radius: 5px
+    -webkit-border-radius: 5px
+    padding: 20px
+    margin-bottom: 20px
+    h3
+      font-family: "Crete Round",Georgia,Times New Roman,serif
+      font-size: 20px
+      color: whitesmoke
+      border-bottom: 1px dotted whitesmoke
+      padding-bottom: 5px
+    .description
+      font-family: "myriad-pro",Arial,sans-serif
+      font-size: 16px
+    .start-date
+      margin-bottom: 0
+      font-size: 18px
+    .price
+      margin-top: 0
+      font-size: 18px
+    p
+      color: whitesmoke
+    .btn
+      display: block
+      white-space: normal
+      color: white
+      background: #f27649
+      border-radius: 5px
+      -moz-border-radius: 5px
+      -webkit-border-radius: 5px
+      font-family: "myriad-pro",Arial,sans-serif
+      font-size: 18px
+      margin-top: 20px
+
+.show
+  display: block
+
+.hide
+  display: none
+
+.is-table
+  display: table
+
+.table-cell
+  display: table-cell
+  vertical-align: middle
+
+.center-block
+  text-align: center
+
+.landing-page
+  #header
+    background: url("/assets/front_page/confused-coder-b218ff3b0b6b2b5df7ea1ee6daf08e53.jpg")
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+  nav
+    display: none
+  #footer .nav
+    display: block
+  .top-large
+    float: none
+    width: 100%
+    margin-top: 40px
+    padding-bottom: 40px
+    div
+      font-size: 36px
+    p:nth-of-type(2)
+      margin-bottom: 40px
+  .our-curriculum
+    width: 1000px
+    text-align: left
+  #email-form
+    width: 755px
+    margin: 0 auto
+    #mailing-list-email
+      width: 500px
+    .btn
+      margin: 0 0 0 40px
+      float: left
+
+.new-page #footer
+  height: 70px
+
+#sign_in, #forgot_password
+  margin: auto
+  overflow: auto
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  width: 400px
+  height: 450px
+
+#sign_in fieldset, #forgot_password fieldset
+  padding: 20px
+  background: #127570
+  border-radius: 5px
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+  border: none
+  color: white
+
+#sign_in label, #forgot_password label
+  width: 50px
+  height: 50px
+  display: block
+  float: left
+  background-color: #e5e5e5
+  background-repeat: no-repeat
+  background-position: center center
+  border-top-left-radius: 5px
+  border-bottom-left-radius: 5px
+  -webkit-border-top-left-radius: 5px
+  -webkit-border-bottom-left-radius: 5px
+  -moz-border-top-left-radius: 5px
+  -moz-border-bottom-left-radius: 5px
+
+#sign_in .email, #forgot_password .email
+  background-image: url("/assets/front_page/email-address-icon-5767259af28a60c800d2a37b112efb7f.png")
+
+#sign_in .password, #forgot_password .password
+  background-image: url("/assets/front_page/password-icon-286b44c8bfba0a4916a6cc605655489b.png")
+
+#sign_in dd input, #forgot_password dd input
+  width: 305px
+  height: 50px
+  border: none
+  border-top-right-radius: 5px
+  border-bottom-right-radius: 5px
+  -webkit-border-top-right-radius: 5px
+  -webkit-border-bottom-right-radius: 5px
+  -moz-border-top-right-radius: 5px
+  -moz-border-bottom-right-radius: 5px
+  font-size: 20px
+  padding: 0 10px
+
+#sign_in .actions, #forgot_password .actions
+  padding: 0
+
+#sign_in .btn, #forgot_password .btn
+  float: left
+  background: #f27649
+  color: white
+
+#sign_in a, #forgot_password a
+  float: right
+  color: white
+  margin-top: 5px
+
+#sign_in a:hover, #forgot_password a:hover
+  color: #77f0f0
+  text-decoration: none
+
+#pjax-container .alert p
+  margin: 0
+
+section
+  &#confirm_password_reset, &#expired_token
+    padding: 75px
+  &.library
+    background-color: white
+    padding: 20px 0
+
+.library-section
+  font-family: "Crete Round",Georgia,Times New Roman,serif
+  font-size: 30px
+  min-height: 100px
+  color: black
+  text-align: left
+  padding: 20px 0 0 0
+  background-color: #eaf9f6
+
+.ir
+  background-color: transparent
+  border: 0
+  overflow: hidden
+  *text-indent: -9999px
+  &:before
+    content: ""
+    display: block
+    width: 0
+    height: 150%
+
+.hidden
+  display: none!important
+  visibility: hidden
+
+.visuallyhidden
+  border: 0
+  clip: rect(0 0 0 0)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  width: 1px
+  &.focusable
+    &:active, &:focus
+      clip: auto
+      height: auto
+      margin: 0
+      overflow: visible
+      position: static
+      width: auto
+
+.invisible
+  visibility: hidden
+
+.clearfix
+  &:before
+    content: " "
+    display: table
+  &:after
+    content: " "
+    display: table
+    clear: both
+  *zoom: 1
+
+.sign_in_links
+  margin-top: -10px
+  margin-bottom: 0px
