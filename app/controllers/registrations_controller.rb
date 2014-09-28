@@ -26,6 +26,17 @@ class RegistrationsController < ApplicationController
     end
   end
 
+  protect_from_forgery except: [:hook]
+  def hook
+    params.require(:registration).permit! # Permit all Paypal input params
+    status = params[:payment_status]
+    if status == "Completed"
+      @registration = Registration.find params[:invoice]
+      @registration.update_attributes notification_params: params, status: status, transaction_id: params[:txn_id]
+    end
+    render nothing: true
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_registration
