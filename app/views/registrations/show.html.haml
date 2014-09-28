@@ -1,19 +1,35 @@
-%p#notice= notice
-%p
-  %strong Course:
-  = @registration.course.name
-%p
-  %strong Full name:
-  = @registration.full_name
-%p
-  %strong Company:
-  = @registration.company
-%p
-  %strong Email:
-  = @registration.email
-%p
-  %strong Telephone:
-  = @registration.telephone
-= link_to 'Edit', edit_registration_path(@registration)
-|
-\#{link_to 'Back', registrations_path}
+%section#course-content
+  %section#ruby
+    %section.detailed-syllabus
+      .wrapper-inside
+        %h3.title Course invoice
+      .columns.clearfix
+        .left{style: "padding-left:100px;"}
+          %p#notice= notice
+          %p
+            %strong Course:
+            = @registration.course.name
+          %p
+            %strong Price:
+            $#{@registration.course.price}
+          %p
+            %strong Full name:
+            = @registration.full_name
+          %p
+            %strong Company:
+            = @registration.company
+          %p
+            %strong Email:
+            = @registration.email
+          %p
+            %strong Telephone:
+            = @registration.telephone
+          %p
+            %strong Payment status:
+            = @registration.status
+          %p
+            %strong Payment date:
+            = @registration.purchased_at
+          %p
+            %strong Paypal Transaction Idetifier:
+            = @registration.transaction_id

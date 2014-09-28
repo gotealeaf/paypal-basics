@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :registrations
 
-  post "/hook" => "regstrations#hook"
+  post "/hook" => "registrations#hook"
+  post "/registrations/:id" => "registrations#show"
 
   resources :courses
 

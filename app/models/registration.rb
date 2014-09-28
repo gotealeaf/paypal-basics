@@ -3,6 +3,7 @@ class Registration < ActiveRecord::Base
 
   validates :full_name, :company, :email, :telephone, presence: true
 
+  serialize :notification_params, Hash
   def paypal_url(return_path)
     values = {
         business: "merchant@gotealeaf.com",
