@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Course:
+  = @registration.course.name
+%p
+  %strong Full name:
+  = @registration.full_name
+%p
+  %strong Company:
+  = @registration.company
+%p
+  %strong Email:
+  = @registration.email
+%p
+  %strong Telephone:
+  = @registration.telephone
+= link_to 'Edit', edit_registration_path(@registration)
+|
+\#{link_to 'Back', registrations_path}

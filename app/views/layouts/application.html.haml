@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %title PaypalBasics
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %link{:href => "http://fonts.googleapis.com/css?family=Crete+Round:400,400italic|Open+Sans:400,700,800", :rel => "stylesheet"}/
+    = csrf_meta_tags
+  %body.curriculum-page
+    .wrapper
+      %header#header
+        .top-bg
+          .wrapper-inside.clearfix
+            %h1#logo
+              %a.ir{:href => "/"} Tealeaf Academy: An online school for developers
+            %nav.nav
+              %ul
+                %li
+                  %a{:href => "/faq"} FAQ
+                %li
+                  %a.current{:href => "/curriculum"} Curriculum
+                %li
+                  %a{:href => "/success_stories"} Success Stories
+                %li
+                  %a.apply{"data-toggle" => "modal", :href => "#get_started"} Send Me Details Now!
+                %li
+                  %a{:href => "/sign_in"} Student Login
+        .wrapper-inside.clearfix
+          .top-small The 3-Course Professional Grade Curriculum
+      %section.content.clearfix
+        %section.curriculum
+          = render partial: "courses/index"
+          = yield

@@ -1,0 +1,11 @@
+.course-nav-wrapper
+  .wrapper-inside.clearfix
+    %ul.course-nav-list
+      - @courses.each do |course|
+        %li{class: "#{"active" if params["course_id"].to_i== course.id}"}
+          = link_to new_registration_path(course_id: course.id), class: "ruby" do
+            .course-name
+              = course.name
+
+            %button.btn{style: "color: white;background: rgb(242, 118, 73);"} Register ($#{course.price})
+            .course-arrow
