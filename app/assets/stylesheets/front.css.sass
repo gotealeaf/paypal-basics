@@ -114,6 +114,8 @@ body.modal-open
 
 .top-bg
   min-height: 70px
+  background: #148780
+  padding-top: 10px
 
 .fixed
   background: url("/assets/dark-header.png") left top repeat-x
@@ -129,7 +131,6 @@ body.modal-open
   -moz-background-size: cover
   -o-background-size: cover
   background-size: cover
-  padding-top: 10px
   .top
     width: 1000px
   .nav
@@ -143,12 +144,19 @@ body.modal-open
   margin: 0
   padding: 0
   float: left
+  text-align: center
+  width: 237px
+  height: 55px
+  .sub
+    color: white
+    font-size: 14px
+    margin-top: 5px
   a
-    width: 237px
-    height: 55px
+    color: white
     background-size: 237px 55px
-    background: url("/assets/logo.svg")
     display: block
+    &:hover
+      text-decoration: none
 
 .content
   padding: 0 0 70px 0
@@ -238,9 +246,9 @@ body.modal-open
   font-family: "Crete Round",Georgia,Times New Roman,serif
   font-size: 40px
   min-height: 270px
-  color: white
+  color: #148780
   text-align: center
-  padding: 90px 0 0 0
+  padding: 10px 0 0 0
 
 .top-large
   float: left
