@@ -39,7 +39,18 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    better_errors (2.0.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     builder (3.2.2)
+    byebug (3.4.0)
+      columnize (~> 0.8)
+      debugger-linecache (~> 1.2)
+      slop (~> 3.6)
+    celluloid (0.16.0)
+      timers (~> 4.0.0)
+    coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -47,8 +58,28 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    columnize (0.8.9)
+    debugger-linecache (1.2.0)
+    em-websocket (0.5.1)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     execjs (2.2.1)
+    ffi (1.9.3)
+    formatador (0.2.5)
+    guard (2.6.1)
+      formatador (>= 0.2.4)
+      listen (~> 2.7)
+      lumberjack (~> 1.0)
+      pry (>= 0.9.12)
+      thor (>= 0.18.1)
+    guard-livereload (2.3.0)
+      em-websocket (~> 0.5)
+      guard (~> 2.0)
+      multi_json (~> 1.8)
+    guard-rails (0.6.0)
+      guard (~> 2.0)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -57,6 +88,8 @@ GEM
       haml (>= 3.1, < 5.0)
       railties (>= 4.0.1)
     hike (1.2.3)
+    hitimes (1.2.2)
+    http_parser.rb (0.6.0)
     i18n (0.6.11)
     jbuilder (2.1.3)
       activesupport (>= 3.0.0, < 5)
@@ -66,8 +99,14 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     libv8 (3.16.14.7)
+    listen (2.7.9)
+      celluloid (>= 0.15.2)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+    lumberjack (1.0.9)
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     mime-types (2.3)
     mini_portile (0.6.0)
     minitest (5.4.1)
@@ -84,6 +123,15 @@ GEM
       json (~> 1.7)
       money (< 7.0.0)
       nokogiri (~> 1.4)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (2.0.0)
+      byebug (~> 3.4)
+      pry (~> 0.10)
+    pry-rails (0.3.2)
+      pry (>= 0.9.10)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -103,6 +151,9 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
+    rb-fsevent (0.9.4)
+    rb-inotify (0.9.5)
+      ffi (>= 0.5.0)
     rdoc (4.1.2)
       json (~> 1.4)
     ref (1.0.5)
@@ -115,6 +166,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    slop (3.6.0)
     spring (1.1.3)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -132,6 +184,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
+    timers (4.0.1)
+      hitimes
     turbolinks (2.3.0)
       coffee-rails
     tzinfo (1.2.2)
@@ -145,10 +199,17 @@ PLATFORMS
 
 DEPENDENCIES
   activemerchant
+  better_errors
   coffee-rails (~> 4.0.0)
+  guard
+  guard-livereload
+  guard-rails
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  pry
+  pry-byebug
+  pry-rails
   rails (= 4.1.6)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
