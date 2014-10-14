@@ -25,5 +25,41 @@
           .field
             = f.label :telephone
             = f.text_field :telephone
+
+          .field.payment_method
+            = label_tag :payment_method
+            = radio_button_tag :payment_method, "paypal"
+            = image_tag "ppcom.svg"
+            = radio_button_tag :payment_method, "card", checked: true
+            = image_tag "credit-card.jpg", style: "max-width: 100px;"
+            :coffeescript
+              $(document).on "click", "#new_registration input[type='radio']", (e)->
+                if $("#payment_method_card:checked").val() == "card"
+                  $("fieldset.card_info").show()
+                else
+                  $("fieldset.card_info").hide()
+
+            %fieldset.card_info
+              %legend Card info
+              = f.fields_for :card do |c|
+                .field
+                  = c.label :first_name
+                  = c.text_field :first_name
+                .field
+                  = c.label :last_name
+                  = c.text_field :last_name
+                .field
+                  = c.label :card_type
+                  = c.select :card_type, [["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]]
+                .field
+                  = c.label :card_number
+                  = c.text_field :card_number
+                .field
+                  = c.label :card_verification, "Card Verification Value (CVV)"
+                  = c.text_field :card_verification
+                .field
+                  = c.label :card_expires_on
+                  = c.date_select :card_expires_on, discard_day: true, start_year: Date.today.year, end_year: (Date.today.year+10), add_month_numbers: true
+
           .actions
             = f.submit "Registration Payment", class: "btn", style: "color: white;background: rgb(242, 118, 73);"
