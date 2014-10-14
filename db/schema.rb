@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014092209) do
+ActiveRecord::Schema.define(version: 20141014161040) do
+
+  create_table "card_transactions", force: true do |t|
+    t.integer  "card_id"
+    t.string   "action"
+    t.integer  "amount"
+    t.boolean  "success"
+    t.string   "authorization"
+    t.string   "message"
+    t.text     "params"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "card_transactions", ["card_id"], name: "index_card_transactions_on_card_id"
 
   create_table "cards", force: true do |t|
     t.integer  "registration_id"

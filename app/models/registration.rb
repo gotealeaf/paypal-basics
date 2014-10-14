@@ -1,5 +1,7 @@
 class Registration < ActiveRecord::Base
   belongs_to :course
+  has_one :card
+  accepts_nested_attributes_for :card
 
   validates :full_name, :company, :email, :telephone, presence: true
 
@@ -20,5 +22,7 @@ class Registration < ActiveRecord::Base
     "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr?" + values.to_query
   end
 
-
+  def payment_method
+    if card.nil? then "paypal"; else "card"; end
+  end
 end

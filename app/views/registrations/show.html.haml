@@ -5,7 +5,10 @@
         %h3.title Course invoice
       .columns.clearfix
         .left{style: "padding-left:100px;"}
-          %p#notice= notice
+          - if notice
+            %p#notice{style: "background-color: lightgreen;padding: 5px;"}= notice
+          - if alert
+            %p#alert{style: "background-color: lightpink;padding: 5px;"}= alert
           %p
             %strong Course:
             = @registration.course.name
@@ -25,11 +28,19 @@
             %strong Telephone:
             = @registration.telephone
           %p
-            %strong Payment status:
-            = @registration.status
-          %p
             %strong Payment date:
             = @registration.purchased_at
           %p
-            %strong Paypal Transaction Idetifier:
-            = @registration.transaction_id
+            %strong Payment method:
+            = @registration.payment_method.capitalize
+          - if @registration.payment_method == "paypal"
+            %p
+              %strong Payment status:
+              = @registration.status
+            %p
+              %strong Paypal Transaction Identifier:
+              = @registration.transaction_id
+          - else
+            %p
+              %strong Transaction Identifier:
+              = @registration.card.card_transaction.params["transaction_id"]
