@@ -63,3 +63,7 @@
 
           .actions
             = f.submit "Registration Payment", class: "btn", style: "color: white;background: rgb(242, 118, 73);"
+            :coffeescript
+              $("form#new_registration").submit ->
+                $(this).find('input[type=submit]').attr('disabled', 'disabled')
+                $(this).find('input[type=submit]').val "Submitting, please wait ..."
