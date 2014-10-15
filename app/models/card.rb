@@ -1,6 +1,7 @@
 class Card < ActiveRecord::Base
   belongs_to :registration
   has_one :card_transaction
+  has_one :course, through: :registration
 
   # These attributes won't be stored
   attr_accessor :card_number, :card_verification
@@ -8,7 +9,12 @@ class Card < ActiveRecord::Base
   before_create :validate_card
 
   def purchase
-    response = GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
+    response = if course.recurring
+                 GATEWAY.recurring(price_in_cents, credit_card, purchase_options)
+               else
+                 binding.pry
+                 GATEWAY.purchase(price_in_cents, credit_card, purchase_options)
+               end
     create_card_transaction(action: "purchase", amount: price_in_cents, response: response)
     registration.update_attribute(:purchased_at, Time.now) if response.success?
     response.success?
@@ -21,17 +27,28 @@ class Card < ActiveRecord::Base
   private
 
   def purchase_options
-    {
-        ip: ip_address,
-        billing_address: {
-            name:      "Flaying Cakes",
-            address1:  "123 5th Av.",
-            city:      "New York",
-            state:     "NY",
-            country:   "US",
-            zip:       "10001"
+    values = {
+            ip: ip_address,
+            billing_address: {
+                name:      "Flaying Cakes",
+                address1:  "123 5th Av.",
+                city:      "New York",
+                state:     "NY",
+                country:   "US",
+                zip:       "10001"
+            }
         }
-    }
+    if course.recurring
+      values.merge(
+        period: course.period,
+        frequency: 1,
+        cycles: course.cycles,
+        description: course.name,
+        start_date: Time.now
+      )
+    else
+      values
+    end
   end
 
   def validate_card

@@ -42,5 +42,9 @@
               = @registration.transaction_id
           - else
             %p
-              %strong Transaction Identifier:
-              = @registration.card.card_transaction.params["transaction_id"]
+              - if @registration.course.recurring
+                %strong Profile Idetntifier:
+                = @registration.card.card_transaction.params["profile_id"]
+              - else
+                %strong Transaction Identifier:
+                = @registration.card.card_transaction.params["transaction_id"]
