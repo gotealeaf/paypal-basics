@@ -7,5 +7,5 @@
             .course-name
               = course.name
 
-            %button.btn{style: "color: white;background: rgb(242, 118, 73);"} Register ($#{course.price})
+            %button.btn{style: "color: white;background: rgb(242, 118, 73);"} Register ($#{course.price} #{course.period if course.recurring})
             .course-arrow
