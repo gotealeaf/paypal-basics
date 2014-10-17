@@ -32,12 +32,16 @@
             = image_tag "ppcom.svg"
             = radio_button_tag :payment_method, "card", checked: true
             = image_tag "credit-card.jpg", style: "max-width: 100px;"
-            :coffeescript
-              $(document).on "click", "#new_registration input[type='radio']", (e)->
-                if $("#payment_method_card:checked").val() == "card"
-                  $("fieldset.card_info").show()
-                else
-                  $("fieldset.card_info").hide()
+            :javascript
+              $(document).on("click", "#new_registration input[type='radio']",
+                function(e) {
+                  if ($("#payment_method_card:checked").val() == "card") {
+                    $("fieldset.card_info").show();
+                  }
+                  else {
+                    $("fieldset.card_info").hide();
+                  }
+                });
 
             %fieldset.card_info
               %legend Card info
@@ -63,7 +67,8 @@
 
           .actions
             = f.submit "Registration Payment", class: "btn", style: "color: white;background: rgb(242, 118, 73);"
-            :coffeescript
-              $("form#new_registration").submit ->
-                $(this).find('input[type=submit]').attr('disabled', 'disabled')
-                $(this).find('input[type=submit]').val "Submitting, please wait ..."
+            :javascript
+              $("form#new_registration").submit( function() {
+                $(this).find('input[type=submit]').attr('disabled', 'disabled');
+                $(this).find('input[type=submit]').val("Submitting, please wait ...")
+              });
