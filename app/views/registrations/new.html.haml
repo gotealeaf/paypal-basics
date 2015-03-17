@@ -11,8 +11,9 @@
               %ul
                 - @registration.errors.full_messages.each do |message|
                   %li= message
-          .field
-            = f.hidden_field :course_id, value: @course.id
+          - if @course and @course.id
+            .field
+              = f.hidden_field :course_id, value: @course.id
           .field
             = f.label :full_name
             = f.text_field :full_name
